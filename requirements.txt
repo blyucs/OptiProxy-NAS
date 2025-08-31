@@ -1,0 +1,31 @@
+ConfigSpace==0.4.19
+pyyaml==5.4.1
+networkx==2.6.3
+numpy==1.21.0; python_version <= '3.7'
+numpy==1.23.5; python_version > '3.7'
+torch==2.0.0
+torchvision>=0.10.0
+fvcore==0.1.5.post20210630
+pytest==6.2.4
+lightgbm==3.2.1
+ngboost==0.3.11
+xgboost==1.4.2
+emcee==3.1.0
+pybnn==0.0.5
+grakel==0.1.8
+pyro-ppl==1.9.0
+scipy==1.10.1
+pyDOE
+tornado
+nasbench301 @ git+https://github.com/automl/nasbench301@no_gin
+nasbench-pytorch @ git+https://github.com/romulus0914/NASBench-PyTorch@37bc332bc6802e0375d8cca839d54f47524487fb
+# additional from setup.py prev
+tqdm==4.61.1
+scikit-learn==1.0.2
+scikit-image==0.19.2
+pytorch-msssim==0.2.1
+tensorwatch==0.9.1
+
+# from zerocost
+transforms3d
+gdown

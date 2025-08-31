@@ -1,0 +1,59 @@
+dataset: cifar10
+#dataset: cifar100
+#dataset: ImageNet16-120
+experiment_type: search
+out_dir: p201-0
+predictor: gcn
+search_space: nasbench201
+max_acc: 91.606
+seed: 1
+uniform_random: 1
+search_device: 'cpu'
+surrogate_device: 'cuda:0'
+dataset_ver: v1_0
+num_vertices: 8
+sample_mean: False
+config_name: "acc_0516_c10"
+test_id: 0
+ylim_s: 88
+ylim_e: 92
+model_fit_para:
+  {
+      gcn_hidden: 144,
+      gcn_layers: 2,
+      mlp_hidden: 144,
+      batch_size: 7,
+      lr: 0.001,
+      model_epochs: 500,
+      ranking_loss_reg_coe: 0.2,
+      lr_gamma: 0.9,
+      lr_step: 10,
+      log_step: 10,
+      weighted_pooling: False
+  }
+
+search_para:
+  {
+    base_temp: 0.7,
+    min_temp: 0.2,
+    num_nodes: 6,
+    num_ops: 5,
+    lr: 0.02,
+    lr_step: 10,
+    lr_gamma: 0.9,
+    log_step: 10,
+    lhs_lower: 0.9,
+    lhs_range: 0.1,
+    init_adj_change: 0.5,
+    lr_beta: 0.001,
+    input_batch_size: 5,
+    num_sample_each_step: 10,
+    num_sample_init: 10,
+    search_steps: 9,
+    verify_ratio: 40,
+    valid_freq: 2,
+    search_epochs: 300
+  }
+
+mean: 83.67354764413673
+std: 12.804852573837849

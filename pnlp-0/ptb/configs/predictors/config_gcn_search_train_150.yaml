@@ -1,0 +1,53 @@
+dataset: ptb
+experiment_type: search
+out_dir: pnlp-0
+predictor: gcn
+search_space: nlp
+dataset_ver: None
+max_acc: 97.0 # not means, for the xgboost
+seed: 0
+search_device: 'cpu' #'cuda:0'
+surrogate_device: 'cuda:0'
+uniform_random: 1
+num_vertices: 8  # num_nodes
+sample_mean: True
+config_name: "test_nlp"
+test_id: 0
+ylim_s: 93
+ylim_e: 96.5
+model_fit_para:
+  {
+      gcn_hidden: 186, # 128,
+      gcn_layers: 2,
+      mlp_hidden:  186, # 128,
+      batch_size: 10,
+      lr: 0.001,
+      model_epochs: 500, # 200,
+      ranking_loss_reg_coe: 0.2,
+      lr_gamma: 0.92,
+      lr_step: 10,
+      log_step: 10,
+      weighted_pooling: False
+  }
+search_para:
+  {
+    num_nodes: 8,     # except for the input (2 nodes) and output (1 node)
+    num_ops: 8,
+    lr_step: 10,
+    lr_gamma: 0.9,
+    log_step: 10,
+    base_temp: 0.7,
+    min_temp: 0.2,
+    init_adj_change: 0.5,
+    lr_beta: 0.01,
+    input_batch_size: 2,
+    num_sample_each_step: 5,
+    num_sample_init: 5,
+    search_steps: 29,  # 150
+    verify_ratio: 50,
+    valid_freq: 2,
+    search_epochs: 200,
+  }
+mean: 93.9592344642546
+std: 0.6725998343130422
+
